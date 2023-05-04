@@ -7,7 +7,7 @@
             'parking' => true,
             'vote' => 4,
             'distance_to_center' => 10.4,
-            'img' => 'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/13/47/ef/37/hotel-belvedere-bellagio.jpg?w=1200&h=-1&s=1'
+            
         ],
         [
             'name' => 'Hotel Futuro',
@@ -15,7 +15,7 @@
             'parking' => true,
             'vote' => 2,
             'distance_to_center' => 2,
-            'img' => ''
+           
         ],
         [
             'name' => 'Hotel Rivamare',
@@ -23,7 +23,7 @@
             'parking' => false,
             'vote' => 1,
             'distance_to_center' => 1,
-            'img' => ''
+           
         ],
         [
             'name' => 'Hotel Bellavista',
@@ -31,7 +31,7 @@
             'parking' => false,
             'vote' => 5,
             'distance_to_center' => 5.5,
-            'img' => ''
+           
         ],
         [
             'name' => 'Hotel Milano',
@@ -39,7 +39,7 @@
             'parking' => true,
             'vote' => 2,
             'distance_to_center' => 50,
-            'img' => ''
+            
         ],
 
     ];
@@ -71,19 +71,19 @@ $filterHotel = $hotels;
               <?php foreach ($filterHotel as $value) { ?>
             <div class="col m-4">
                 <div class="card mb-3 mt-2">
-                    <div class="card-head">
-                        <img src=<?php $value['img']?> alt= "" class="card-img-top img-fluid">
+                    <div class="card-head bg-dark-subtle ">
+                <h2 class="card-title  p-4"  ><?php echo $value['name'] ?></h2>
                     </div>
-                    <div class="card-body">
-                    <h4 class="card-title" ><?php echo $value['name'] ?></h4>
-                    <div class="card-text" > <?php echo $value['description'] ?></div>
+                    <div class="card-body bg-body-secondary border">
+                    
+                    <div class="card-text " > <?php echo $value['description'] ?></div>
 
 
 
 
                 <?php for($i=0;$i<5;$i++){?>
                                 <?php if($i < $value['vote']): ?>
-                                    <i class="bi bi-star-fill text-warning"></i>
+                                    <i class="bi bi-star-fill text-warning "></i>
                                 <?php else:?>
                                     <i class="bi bi-star"></i>
                                 <?php endif?>
@@ -94,12 +94,12 @@ $filterHotel = $hotels;
 
                             <?php if($value['parking']):?>
                                 <div>
-                                    <i class="bi bi-p-circle-fill text-success fs-3"></i>
+                                    <i class="bi bi-p-circle-fill text-success mt-3 fs-3 d-flex justify-content-center"></i>
                                 </div>
                            
                             <?php else:?>
                                 <div>
-                                <i class="bi bi-sign-no-parking-fill text-danger fs-3"></i>
+                                <i class="bi bi-sign-no-parking-fill text-danger mt-3 fs-3 d-flex justify-content-center"></i>
                                 </div>
                             <?php endif ?>
                 </div>
