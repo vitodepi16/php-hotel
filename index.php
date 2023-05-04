@@ -3,7 +3,7 @@
 
         [
             'name' => 'Hotel Belvedere',
-            'description' => 'Hotel Belvedere Descrizione',
+            'description' => 'L’Hotel Belvedere è il vostro paradiso, l’incanto di un giardino privato a pochi passi dal vivace viavai di Bellagio. Accoglienza profonda, un’ospitalità affinata da cinque generazioni di donne appassionate a un raro e arioso paradiso di fascino in collina. Per sfumare nel sogno, mentre lo sguardo vola leggero, accarezza la pittoresca baia di Pescallo e si abbandona allo scenario del lago incorniciato dalle Alpi sullo sfondo.',
             'parking' => true,
             'vote' => 4,
             'distance_to_center' => 10.4,
@@ -11,7 +11,7 @@
         ],
         [
             'name' => 'Hotel Futuro',
-            'description' => 'Hotel Futuro Descrizione',
+            'description' => "L'Hotel Futuro si trova nel centro di Aversa, a 5 minuti d'auto dalla stazione, è facilmente raggiungibile dall'autostrada A1 e propone camere climatizzate con TV LCD, la connessione Wi-Fi gratuita nell'intera struttura e una colazione dolce tutte le mattine.",
             'parking' => true,
             'vote' => 2,
             'distance_to_center' => 2,
@@ -19,7 +19,11 @@
         ],
         [
             'name' => 'Hotel Rivamare',
-            'description' => 'Hotel Rivamare Descrizione',
+            'description' => "Hai diritto a uno sconto Genius su Hotel Rivamare! Per risparmiare su questa struttura ti basta accedere.
+            Situato a soli 20 metri da una spiaggia, l'Hotel Rivamare sorge in una posizione tranquilla al Lido, l'isola più grande della Laguna di Venezia, e serve la colazione sulla terrazza.
+            Tutte le camere del Rivamare Hotel sono climatizzate e dotate di pavimenti in legno, TV e bagno privato. Alcune vantano anche una terrazza privata con vista sul Mar Adriatico o sul giardino.
+
+         ",
             'parking' => false,
             'vote' => 1,
             'distance_to_center' => 1,
@@ -27,7 +31,8 @@
         ],
         [
             'name' => 'Hotel Bellavista',
-            'description' => 'Hotel Bellavista Descrizione',
+            'description' => "Hai diritto a uno sconto Genius su Bellavista! Per risparmiare su questa struttura ti basta accedere.
+            Interamente coperto dalla connessione WiFi gratuita, il Bellavista vi attende nel quartiere Albayzín di Granada, a 500 metri dall'Alhambra e dal Generalife, e a 800 metri dalla Cattedrale di Granada.",
             'parking' => false,
             'vote' => 5,
             'distance_to_center' => 5.5,
@@ -35,7 +40,7 @@
         ],
         [
             'name' => 'Hotel Milano',
-            'description' => 'Hotel Milano Descrizione',
+            'description' => "L'hotel Hotel ibis Milano Centro è una struttura comoda e moderna situata a breve distanza dalla stazione ferroviaria di Milano Centrale. Le sistemazioni offrono TV a schermo piatto, Wi-Fi gratuito e pareti insonorizzate. Tutte le stanze sono dotate di bagno privato con box doccia.",
             'parking' => true,
             'vote' => 2,
             'distance_to_center' => 50,
@@ -66,24 +71,25 @@ $filterHotel = $hotels;
 </head>
 <body>
     <div class="container">
+        <h1 class="text-primary text-center fs-1">Booking</h1>
         <div class="row">
 
               <?php foreach ($filterHotel as $value) { ?>
-            <div class="col m-4">
+            <div class="col-12 m-4 col-sm-4 col-md-6 col-lg-8 ">
                 <div class="card mb-3 mt-2">
                     <div class="card-head bg-dark-subtle ">
                 <h2 class="card-title  p-4"  ><?php echo $value['name'] ?></h2>
                     </div>
                     <div class="card-body bg-body-secondary border">
                     
-                    <div class="card-text " > <?php echo $value['description'] ?></div>
+                    <div class="card-text fs-6 fw-lighter" > <?php echo $value['description'] ?></div>
 
 
 
 
                 <?php for($i=0;$i<5;$i++){?>
                                 <?php if($i < $value['vote']): ?>
-                                    <i class="bi bi-star-fill text-warning "></i>
+                                    <i class="bi bi-star-fill text-warning mt-3"></i>
                                 <?php else:?>
                                     <i class="bi bi-star"></i>
                                 <?php endif?>
